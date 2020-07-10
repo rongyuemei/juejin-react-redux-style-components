@@ -32,17 +32,6 @@ class Header extends Component{
                         </div>
                     </div>
                 </div>
-                <ul className={"nav-child-wrap"}>
-                    <li className={"child-item"}>推荐</li>
-                    <li className={"child-item"}>后端</li>
-                    <li className={"child-item"}>前端</li>
-                    <li className={"child-item"}>Android</li>
-                    <li className={"child-item"}>iOS</li>
-                    <li className={"child-item"}>人工智能</li>
-                    <li className={"child-item"}>开发工具</li>
-                    <li className={"child-item"}>代码人生</li>
-                    <li className={"child-item"}>阅读</li>
-                </ul>
             </HeaderWrap>
         )
     }

@@ -60,16 +60,4 @@ export const HeaderWrap = styled.div`
             }
         }
     }
-    .nav-child-wrap{
-        width: 960px;
-        margin: 0 auto;
-        .child-item{
-            height: 40px;
-            cursor: pointer;
-            line-height: 40px;
-            display: inline-block;
-            padding: 0 10px;
-            margin-right: 10px;
-        }
-    }
 `
