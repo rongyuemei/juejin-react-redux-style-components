@@ -1,5 +1,5 @@
 import axios from "axios"
-import {INITDATA} from "./actionTypes";
+import {INITDATA, NAVINDEX, MOUSELEAVEX} from "./actionTypes";
 
 const getHomeData = (data) => ({
     data:data,
@@ -13,3 +13,12 @@ export const getInitDataAction = () => {
         })
     }
 }
+
+export const navIndexAction = (index) => ({
+    type: NAVINDEX,
+    index
+})
+
+export const mouseLeavexAction = () => ({
+    type: MOUSELEAVEX
+})

@@ -5,7 +5,11 @@ export const Wrap = styled.div`
 `
 export const NavWrap = styled.div`
     color: #333;
+    width: 100%;
     font-size: 14px;
+    position: fixed;
+    top: 61px;
+    left: 0;
     background: #fff;
     border-bottom: 1px solid #f1f1f1;
     .nav-child-wrap{
@@ -14,10 +18,32 @@ export const NavWrap = styled.div`
         .child-item{
             height: 40px;
             cursor: pointer;
+            position: relative;
             line-height: 40px;
             display: inline-block;
             padding-right: 10px;
             margin-right: 10px;
+            .box-wrap{
+                width: 300px;
+                position: absolute;
+                top: 40px;
+                left: 0;
+                padding: 10px;
+                box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.2);
+                background: #fff;
+                .box-item{
+                    text-align: center;
+                    padding: 0 14px;
+                    line-height: 26px;
+                    margin: 0 10px 10px 0;
+                    display: inline-block;
+                    border-radius: 14px;
+                    background-color: #f3f6f3;
+                }
+                &.isShow{
+                    display: none;
+                }
+            }
         }
     }
 `
@@ -25,6 +51,7 @@ export const HomeWrap = styled.div`
     max-width: 960px;
     height: 100%;
     margin: 0 auto;
+    margin-top: 100px;
     display: flex;
     justify-content: space-between;
     background: #f4f5f5;

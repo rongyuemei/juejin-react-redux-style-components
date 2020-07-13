@@ -3,13 +3,16 @@ import logoUrl from "../../statics/images/logo.svg"
 
 export const HeaderWrap = styled.div`
     color: #909090;
-    .nav-wrap{
-        height: 60px;
-        border-bottom: 1px solid #f1f1f1;
-    }
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
     .header-inner-wrap{
         height: 60px;
-        max-width: 960px;
+        width: 960px;
         margin: 0 auto;
         .logo{
             width: 98px;

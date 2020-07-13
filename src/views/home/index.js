@@ -1,21 +1,44 @@
 import React, {PureComponent} from "react";
 import {Wrap, HomeWrap, NavWrap} from "./style"
 import {connect} from "react-redux"
-import {getInitDataAction} from "../../store/home/actionCreator"
+import {getInitDataAction, navIndexAction, mouseLeavexAction} from "../../store/home/actionCreator"
 import adUrl1 from "../../statics/images/ad1.jpg"
 import adUrl2 from "../../statics/images/ad2.jpg"
 import qecodeUrl from "../../statics/images/qrcode.png"
 
 class Home extends PureComponent{
     render() {
-        const {childNavList, contentList, hotTags, recommendedList} = this.props;
+        const {
+            childNavList,
+            contentList,
+            hotTags,
+            recommendedList,
+            handleHoverNavItem,
+            navIndex,
+            handleMouseLeave
+        } = this.props;
         return(
             <Wrap>
                 <NavWrap>
                     <ul className={"nav-child-wrap"}>
                         {
-                            childNavList.map((item) => {
-                                return <li key={item.get("id")} className={"child-item"}>{item.get("title")}</li>;
+                            childNavList.map((item, index) => {
+                                return (
+                                    <li
+                                        key={item.get("id")}
+                                        onMouseEnter={() => handleHoverNavItem(index)}
+                                        onMouseLeave={handleMouseLeave}
+                                        className={"child-item"}>
+                                        {item.get("title")}
+                                        <ol className={item.get("children").size && index === navIndex ? "box-wrap" : "box-wrap isShow"}>
+                                            {
+                                                item.get("children").map((i) => {
+                                                    return <li key={i.get("id")} className="box-item">{i.get("name")}</li>
+                                                })
+                                            }
+                                        </ol>
+                                    </li>
+                                )
                             })
                         }
                     </ul>
@@ -141,12 +164,19 @@ const mapStateToProps = (state) => ({
     childNavList: state.getIn(["homeReducer", "childNavList"]),
     contentList: state.getIn(["homeReducer", "contentList"]),
     hotTags: state.getIn(["homeReducer", "hotTags"]),
-    recommendedList: state.getIn(["homeReducer", "recommendedList"])
+    recommendedList: state.getIn(["homeReducer", "recommendedList"]),
+    navIndex: state.getIn(["homeReducer", "navIndex"])
 })
 
 const mapDispatchToProps = (dispatch) => ({
     getInitData(){
         dispatch(getInitDataAction());
+    },
+    handleHoverNavItem(index){
+        dispatch(navIndexAction(index))
+    },
+    handleMouseLeave(){
+        dispatch(mouseLeavexAction())
     }
 })
 

@@ -4,39 +4,218 @@
         "childNavList": [
             {
                 "id": 1,
-                "title": "推荐"
+                "title": "推荐",
+                "children": [
+
+                ]
             },
             {
                 "id": 2,
-                "title": "后端"
+                "title": "后端",
+                "children": [
+                    {
+                        "id": 1,
+                        "name": "Java"
+                    },
+                    {
+                        "id": 2,
+                        "name": "MySQL"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Go"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Spring"
+                    },
+                    {
+                        "id": 5,
+                        "name": "JVM"
+                    }
+                ]
             },
             {
                 "id": 3,
-                "title": "前端"
+                "title": "前端",
+                "children": [
+                    {
+                        "id": 1,
+                        "name": "Java"
+                    },
+                    {
+                        "id": 2,
+                        "name": "MySQL"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Go"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Spring"
+                    },
+                    {
+                        "id": 5,
+                        "name": "JVM"
+                    }
+                ]
             },
             {
                 "id": 4,
-                "title": "Android"
+                "title": "Android",
+                "children": [
+                    {
+                        "id": 1,
+                        "name": "Java"
+                    },
+                    {
+                        "id": 2,
+                        "name": "MySQL"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Go"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Spring"
+                    },
+                    {
+                        "id": 5,
+                        "name": "JVM"
+                    }
+                ]
             },
             {
                 "id": 5,
-                "title": "iOS"
+                "title": "iOS",
+                "children": [
+                    {
+                        "id": 1,
+                        "name": "Java"
+                    },
+                    {
+                        "id": 2,
+                        "name": "MySQL"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Go"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Spring"
+                    },
+                    {
+                        "id": 5,
+                        "name": "JVM"
+                    }
+                ]
             },
             {
                 "id": 6,
-                "title": "人工智能"
+                "title": "人工智能",
+                "children": [
+                    {
+                        "id": 1,
+                        "name": "Java"
+                    },
+                    {
+                        "id": 2,
+                        "name": "MySQL"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Go"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Spring"
+                    },
+                    {
+                        "id": 5,
+                        "name": "JVM"
+                    }
+                ]
             },
             {
                 "id": 7,
-                "title": "开发工具"
+                "title": "开发工具",
+                "children": [
+                    {
+                        "id": 1,
+                        "name": "Java"
+                    },
+                    {
+                        "id": 2,
+                        "name": "MySQL"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Go"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Spring"
+                    },
+                    {
+                        "id": 5,
+                        "name": "JVM"
+                    }
+                ]
             },
             {
                 "id": 8,
-                "title": "代码人生"
+                "title": "代码人生",
+                "children": [
+                    {
+                        "id": 1,
+                        "name": "Java"
+                    },
+                    {
+                        "id": 2,
+                        "name": "MySQL"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Go"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Spring"
+                    },
+                    {
+                        "id": 5,
+                        "name": "JVM"
+                    }
+                ]
             },
             {
                 "id": 9,
-                "title": "阅读"
+                "title": "阅读",
+                "children": [
+                    {
+                        "id": 1,
+                        "name": "Java"
+                    },
+                    {
+                        "id": 2,
+                        "name": "MySQL"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Go"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Spring"
+                    },
+                    {
+                        "id": 5,
+                        "name": "JVM"
+                    }
+                ]
             }
         ],
         "contentList": [
