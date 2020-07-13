@@ -2,8 +2,10 @@ import React, {Component, Fragment} from 'react';
 import {GlobalStyle} from "./globalStyle"
 import {IconfontStyle} from "./statics/iconfont/iconfont"
 import Header from "./components/header"
-import {HashRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import Home from "./views/home"
+
+
 
 class App extends Component{
   render() {
@@ -12,9 +14,9 @@ class App extends Component{
               <GlobalStyle/>
               <IconfontStyle/>
               <Header></Header>
-              <HashRouter>
+              <BrowserRouter>
                   <Route exact path="/" component={Home}/>
-              </HashRouter>
+              </BrowserRouter>
           </Fragment>
       )
   }

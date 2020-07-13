@@ -1,0 +1,1 @@
+export const INITDATA = "home/initData";
