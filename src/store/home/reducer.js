@@ -3,7 +3,9 @@ import {fromJS} from "immutable";
 
 const defaultStore = fromJS({
     childNavList: [],
-    contentList: []
+    contentList: [],
+    hotTags: [],
+    recommendedList: []
 })
 
 export default (state = defaultStore, action) => {
@@ -11,7 +13,9 @@ export default (state = defaultStore, action) => {
         case INITDATA:
             return state.merge({
                 childNavList: fromJS(action.data.childNavList),
-                contentList: fromJS(action.data.contentList)
+                contentList: fromJS(action.data.contentList),
+                hotTags: fromJS(action.data.hotTags),
+                recommendedList: fromJS(action.data.recommendedList)
             })
         default:
             return state

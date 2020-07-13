@@ -196,6 +196,67 @@
                 "comment": 20,
                 "imgUrl": "https://user-gold-cdn.xitu.io/2020/7/13/17343ca6412f1e2c?imageView2/1/w/120/h/120/q/85/format/webp/interlace/1"
             }
+        ],
+        "hotTags": [
+            {
+                "id": 1,
+                "name": "架构"
+            },
+            {
+                "id": 2,
+                "name": "开源"
+            },
+            {
+                "id": 3,
+                "name": "算法"
+            },
+            {
+                "id": 4,
+                "name": "GitHub"
+            },
+            {
+                "id": 5,
+                "name": "面试"
+            },
+            {
+                "id": 6,
+                "name": "代码规范"
+            },
+            {
+                "id": 7,
+                "name": "产品"
+            },
+            {
+                "id": 8,
+                "name": "掘金翻译计划"
+            }
+        ],
+        "recommendedList": [
+            {
+                "id": 1,
+                "name": "收藏集",
+                "imgUrl": "https://b-gold-cdn.xitu.io/v3/static/img/collections.945b9ae.png"
+            },
+            {
+                "id": 2,
+                "name": "掘金社区漫游指南",
+                "imgUrl": "https://b-gold-cdn.xitu.io/v3/static/img/book.75582b2.png"
+            },
+            {
+                "id": 3,
+                "name": "下载掘金浏览器插件",
+                "imgUrl": "https://b-gold-cdn.xitu.io/v3/static/img/juejin-extension-icon.4b79fb4.png"
+            },
+            {
+                "id": 4,
+                "name": "前往掘金翻译计划",
+                "imgUrl": "https://b-gold-cdn.xitu.io/v3/static/img/juejin-miner.b78347c.png"
+            },
+            {
+                "id": 5,
+                "name": "商务合作",
+                "imgUrl": "https://b-gold-cdn.xitu.io/v3/static/img/juejin-partner.4dd2d8c.png"
+            }
         ]
     }
 }

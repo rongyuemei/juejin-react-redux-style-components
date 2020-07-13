@@ -2,10 +2,13 @@ import React, {PureComponent} from "react";
 import {Wrap, HomeWrap, NavWrap} from "./style"
 import {connect} from "react-redux"
 import {getInitDataAction} from "../../store/home/actionCreator"
+import adUrl1 from "../../statics/images/ad1.jpg"
+import adUrl2 from "../../statics/images/ad2.jpg"
+import qecodeUrl from "../../statics/images/qrcode.png"
 
 class Home extends PureComponent{
     render() {
-        const {childNavList, contentList} = this.props;
+        const {childNavList, contentList, hotTags, recommendedList} = this.props;
         return(
             <Wrap>
                 <NavWrap>
@@ -78,7 +81,7 @@ class Home extends PureComponent{
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href="http://www.huodongxing.com/event/4551176078822?qd=juejin">
-                                <img className="img" src="https://user-gold-cdn.xitu.io/1594377453587c4390402e8298c807884a951d008670c.jpg?imageView2/1/q/85/format/webp/interlace/1" alt=""/>
+                                <img className="img" src={adUrl1} alt=""/>
                             </a>
                         </div>
                         <div className="ad-wrap">
@@ -86,9 +89,43 @@ class Home extends PureComponent{
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href="https://juejin.im/pin/5f0528a66fb9a05a216a27b9">
-                                <img className="img" src="https://user-gold-cdn.xitu.io/1594173791152fe8ef31723f2a425a9b6c090ac10af3f.jpg?imageView2/1/q/85/format/webp/interlace/1" alt=""/>
+                                <img className="img" src={adUrl2} alt=""/>
                             </a>
                         </div>
+                        <div className="tags-wrap">
+                            <div className="title">
+                                <span>热门标签</span>
+                                <span className="active">查看全部</span>
+                            </div>
+                            <ul className="tags-list">
+                                {
+                                    hotTags.map((item) => {
+                                        return (
+                                            <li className="tags-item" key={item.get("id")}>{item.get("name")}</li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
+                        <div className="qrcode-wrap">
+                            <img className="qrcode-img" src={qecodeUrl} alt=""/>
+                            <div className="text-wrap">
+                                <div className="title">下载掘金客户端</div>
+                                <div className="content">提个帮助开发者成长的社区</div>
+                            </div>
+                        </div>
+                        <ul className="recommended-wrap">
+                            {
+                                recommendedList.map((item) => {
+                                    return (
+                                        <li key={item.get("id")} className="recommended-item">
+                                            <img className="img" src={item.get("imgUrl")} alt=""/>
+                                            <span className="title">{item.get("name")}</span>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
                     </div>
                 </HomeWrap>
             </Wrap>
@@ -102,7 +139,9 @@ class Home extends PureComponent{
 
 const mapStateToProps = (state) => ({
     childNavList: state.getIn(["homeReducer", "childNavList"]),
-    contentList: state.getIn(["homeReducer", "contentList"])
+    contentList: state.getIn(["homeReducer", "contentList"]),
+    hotTags: state.getIn(["homeReducer", "hotTags"]),
+    recommendedList: state.getIn(["homeReducer", "recommendedList"])
 })
 
 const mapDispatchToProps = (dispatch) => ({

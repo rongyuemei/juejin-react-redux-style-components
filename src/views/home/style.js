@@ -140,5 +140,85 @@ export const HomeWrap = styled.div`
                 width: 100%;
             }
         }
+        .tags-wrap{
+            background: #fff;
+            margin-bottom: 20px;
+            .title{
+                font-size: 14px;
+                padding: 20px 14px;
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #f1f1f1;
+                .active{
+                    color: #007fff;
+                    font-size: 12px;
+                    cursor: pointer;
+                }
+            }
+            .tags-list{
+                padding: 20px 14px;
+                .tags-item{
+                    color: #333;
+                    display: inline-block;
+                    font-size: 12px;
+                    cursor: pointer;
+                    padding: 10px 20px;
+                    margin: 0 10px 10px 0;
+                    border-radius: 40px;
+                    background: #f3f6f3;
+                    &:hover{
+                        color: #fff;
+                        background-color: #0c0;
+                    }
+                }
+            }
+        }
+        .qrcode-wrap{
+            padding: 14px;
+            margin-bottom: 20px;
+            background: #fff;
+            .qrcode-img{
+                width: 50px;
+                height: 50px;
+            }
+            .text-wrap{
+                display: inline-block;
+                cursor: pointer;
+                margin-left: 8px;
+                vertical-align: top;
+                .title{
+                    font-size: 14px;
+                    font-weight: 700;
+                    padding: 6px 0 10px 0;
+                }
+                .content{
+                    color: #909090;
+                    font-size: 12px;
+                }
+            }
+        }
+        .recommended-wrap{
+            background: #fff;
+            .recommended-item{
+                padding: 14px;
+                line-height: 1;
+                cursor: pointer;
+                .img{
+                    width: 36px;
+                    height: 36px;
+                }
+                .title{
+                    line-height: 36px;
+                    color: #333;
+                    display: inline-block;
+                    vertical-align: top;
+                    font-size: 14px;
+                    margin-left: 8px;
+                }
+                &:hover{
+                    background-color: hsla(0,0%,84.7%,.1);
+                }
+            }
+        }
     }
 `
