@@ -1,5 +1,5 @@
 import axios from "axios"
-import {INITDATA, NAVINDEX, MOUSELEAVEX} from "./actionTypes";
+import {INITDATA, NAVINDEX, MOUSELEAVEX, CLICKNAVITEM} from "./actionTypes";
 
 const getHomeData = (data) => ({
     data:data,
@@ -21,4 +21,9 @@ export const navIndexAction = (index) => ({
 
 export const mouseLeavexAction = () => ({
     type: MOUSELEAVEX
+})
+
+export const clickNavItemAction = (index) => ({
+    type: CLICKNAVITEM,
+    index
 })

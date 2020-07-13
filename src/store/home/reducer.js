@@ -1,4 +1,4 @@
-import {INITDATA, NAVINDEX, MOUSELEAVEX} from "./actionTypes";
+import {INITDATA, NAVINDEX, MOUSELEAVEX, CLICKNAVITEM} from "./actionTypes";
 import {fromJS} from "immutable";
 
 const defaultStore = fromJS({
@@ -6,7 +6,8 @@ const defaultStore = fromJS({
     contentList: [],
     hotTags: [],
     recommendedList: [],
-    navIndex: ""
+    navIndex: "",
+    clickNavIndex: 0
 })
 
 export default (state = defaultStore, action) => {
@@ -22,6 +23,8 @@ export default (state = defaultStore, action) => {
             return state.set("navIndex", action.index)
         case MOUSELEAVEX:
             return state.set("navIndex", "")
+        case CLICKNAVITEM:
+            return state.set("clickNavIndex", action.index)
         default:
             return state
     }

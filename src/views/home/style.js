@@ -23,6 +23,12 @@ export const NavWrap = styled.div`
             display: inline-block;
             padding-right: 10px;
             margin-right: 10px;
+            &.active{
+                color: #007fff;
+            }
+            &:hover{
+                color: #007fff;
+            }
             .box-wrap{
                 width: 300px;
                 position: absolute;
@@ -32,6 +38,7 @@ export const NavWrap = styled.div`
                 box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.2);
                 background: #fff;
                 .box-item{
+                    color: #333;
                     text-align: center;
                     padding: 0 14px;
                     line-height: 26px;

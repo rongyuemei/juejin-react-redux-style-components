@@ -1,7 +1,7 @@
 import React, {PureComponent} from "react";
 import {Wrap, HomeWrap, NavWrap} from "./style"
 import {connect} from "react-redux"
-import {getInitDataAction, navIndexAction, mouseLeavexAction} from "../../store/home/actionCreator"
+import {getInitDataAction, navIndexAction, mouseLeavexAction, clickNavItemAction} from "../../store/home/actionCreator"
 import adUrl1 from "../../statics/images/ad1.jpg"
 import adUrl2 from "../../statics/images/ad2.jpg"
 import qecodeUrl from "../../statics/images/qrcode.png"
@@ -15,7 +15,9 @@ class Home extends PureComponent{
             recommendedList,
             handleHoverNavItem,
             navIndex,
-            handleMouseLeave
+            handleMouseLeave,
+            handleClickNavItem,
+            clickNavIndex
         } = this.props;
         return(
             <Wrap>
@@ -27,8 +29,9 @@ class Home extends PureComponent{
                                     <li
                                         key={item.get("id")}
                                         onMouseEnter={() => handleHoverNavItem(index)}
-                                        onMouseLeave={handleMouseLeave}
-                                        className={"child-item"}>
+                                        onMouseLeave={() => handleMouseLeave(navIndex)}
+                                        onClick={() => handleClickNavItem(index)}
+                                        className={index === clickNavIndex ? "child-item active" :"child-item"}>
                                         {item.get("title")}
                                         <ol className={item.get("children").size && index === navIndex ? "box-wrap" : "box-wrap isShow"}>
                                             {
@@ -165,7 +168,8 @@ const mapStateToProps = (state) => ({
     contentList: state.getIn(["homeReducer", "contentList"]),
     hotTags: state.getIn(["homeReducer", "hotTags"]),
     recommendedList: state.getIn(["homeReducer", "recommendedList"]),
-    navIndex: state.getIn(["homeReducer", "navIndex"])
+    navIndex: state.getIn(["homeReducer", "navIndex"]),
+    clickNavIndex: state.getIn(["homeReducer", "clickNavIndex"])
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -177,6 +181,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     handleMouseLeave(){
         dispatch(mouseLeavexAction())
+    },
+    handleClickNavItem(index){
+        dispatch(clickNavItemAction(index))
     }
 })
 
