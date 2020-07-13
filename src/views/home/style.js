@@ -61,7 +61,7 @@ export const HomeWrap = styled.div`
             }
             .text{
                 color: #333;
-                font-size: 14px;
+                font-size: 12px;
                 padding-right: 10px;
             }
             .title{
@@ -135,7 +135,6 @@ export const HomeWrap = styled.div`
         }
         .ad-wrap{
             height: 200px;
-            background: #345354;
             margin-bottom: 20px;
             .img{
                 width: 100%;

@@ -1,15 +1,18 @@
 import {INITDATA} from "./actionTypes";
+import {fromJS} from "immutable";
 
-const defaultStore = {
-    homeData: {}
-}
+const defaultStore = fromJS({
+    childNavList: [],
+    contentList: []
+})
 
 export default (state = defaultStore, action) => {
     switch (action.type) {
         case INITDATA:
-            let newState = Object.assign({}, state)
-            newState.homeData = action.data
-            return newState
+            return state.merge({
+                childNavList: fromJS(action.data.childNavList),
+                contentList: fromJS(action.data.contentList)
+            })
         default:
             return state
     }

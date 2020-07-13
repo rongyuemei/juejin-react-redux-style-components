@@ -1,23 +1,20 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import {Wrap, HomeWrap, NavWrap} from "./style"
 import {connect} from "react-redux"
 import {getInitDataAction} from "../../store/home/actionCreator"
 
-class Home extends Component{
+class Home extends PureComponent{
     render() {
+        const {childNavList, contentList} = this.props;
         return(
             <Wrap>
                 <NavWrap>
                     <ul className={"nav-child-wrap"}>
-                        <li className={"child-item"}>推荐</li>
-                        <li className={"child-item"}>后端</li>
-                        <li className={"child-item"}>前端</li>
-                        <li className={"child-item"}>Android</li>
-                        <li className={"child-item"}>iOS</li>
-                        <li className={"child-item"}>人工智能</li>
-                        <li className={"child-item"}>开发工具</li>
-                        <li className={"child-item"}>代码人生</li>
-                        <li className={"child-item"}>阅读</li>
+                        {
+                            childNavList.map((item) => {
+                                return <li key={item.get("id")} className={"child-item"}>{item.get("title")}</li>;
+                            })
+                        }
                     </ul>
                 </NavWrap>
                 <HomeWrap>
@@ -36,25 +33,31 @@ class Home extends Component{
                             </ul>
                         </header>
                         <ul className={"article-list"}>
-                            <li className={"article-item"}>
-                                <div className={"info-wrap"}>
-                                    <span className={"text active"}>专栏 ·</span>
-                                    <span className={"text"}>shanyue ·</span>
-                                    <span className={"text"}>1小时前 ·</span>
-                                    <span className={"text"}>前端/HTTPS</span>
-                                </div>
-                                <div className={"title"}>我在项目中是这样配置Vue的</div>
-                                <div className={"operate-wrap"}>
-                                    <span className={"operate-item"}>
-                                        <i className={"iconfont"}>&#xe8ad;</i>
-                                        150
-                                    </span>
-                                    <span className={"operate-item"} style={{marginLeft: "-1px"}}>
-                                        <i className={"iconfont"}>&#xe8bd;</i>
-                                        20
-                                    </span>
-                                </div>
-                            </li>
+                            {
+                                contentList.map((item) => {
+                                    return (
+                                        <li className={"article-item"} key={item.get("id")}>
+                                            <div className={"info-wrap"}>
+                                                <span className={"text active"}>{item.get("column")} ·</span>
+                                                <span className={"text"}>{item.get("author")} ·</span>
+                                                <span className={"text"}>{item.get("createTime")} ·</span>
+                                                <span className={"text"}>{item.get("technology")}/{item.get("language")}</span>
+                                            </div>
+                                            <div className={"title"}>{item.get("title")}</div>
+                                            <div className={"operate-wrap"}>
+                                                <span className={"operate-item"}>
+                                                    <i className={"iconfont"}>&#xe8ad;</i>
+                                                    {item.get("goods")}
+                                                </span>
+                                                <span className={"operate-item"} style={{marginLeft: "-1px"}}>
+                                                    <i className={"iconfont"}>&#xe8bd;</i>
+                                                    {item.get("comment")}
+                                                </span>
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                     <div className={"right-wrap"}>
@@ -98,7 +101,8 @@ class Home extends Component{
 }
 
 const mapStateToProps = (state) => ({
-
+    childNavList: state.getIn(["homeReducer", "childNavList"]),
+    contentList: state.getIn(["homeReducer", "contentList"])
 })
 
 const mapDispatchToProps = (dispatch) => ({
